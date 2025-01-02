@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Bac - Donations</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./Images/logo.jpg">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="">
+          <img src="./Images/logo.jpg" alt="logo">
+          <h3><span>CLUB</span>BAC</h3>
+        </a>
+      </div>
+      <div class="navbar_container" id="nav-container">
+        <ul class="navbar_list">
+          <li class="navbar_item">
+            <a href="merch.html" class="navbar_link">Merch</a>
+          </li>
+          <li class="navbar_item">
+            <a href="vlog.html" class="navbar_link">Vlogs</a>
+          </li>
+          <li class="navbar_item">
+            <a href="article.html" class="navbar_link">Articles</a>
+          </li>
+          <li class="navbar_item">
+            <a href="board_member1.html" class="navbar_link">Board Members</a>
+          </li>
+          <li class="navbar_item">
+            <a href="donation.html" class="navbar_link">Donations</a>
+          </li>
+          <li class="navbar_item">
+            <a href="../login.html" class="navbar_link nav_contact">Log out</a>
+          </li>
+        </ul>
+        <div class="nav_close">
+          <i class="bx bx-x" id="nav-close"></i>
+        </div>
+      </div>
+      <div class="navbar_btn">
+        <a href="../login.html">Log out</a>
+      </div>
+      <div class="nav_icon">
+        <i class="bx bx-menu" id="nav-toggle"></i>
+      </div> 
+    </nav>
+  </header>
+
+
+
+  <section class="donation" id="donation">
+    <h2 class="title">Donations</h2>
+    <div class="select_container">
+      <div class="select_section">
+        <select id="paymentMethod">
+          <option value="">-- Select Method of Payment --</option>
+          <option value="visa">Visa</option>
+          <option value="mastercard">MasterCard</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- نافذة Visa -->
+    <div class="modal" id="visaModal">
+      <div class="modal-header">Enter card information Visa</div>
+      <form>
+        <label for="visaCardNumber">Card Number :</label>
+        <input type="text" id="visaCardNumber" name="cardNumber" placeholder="53xx xxxx xxxx xx44" required><br><br>
+        <label for="visaExpiryDate">Expiry Date :</label>
+        <input type="text" id="visaExpiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+        <div class="modal-footer">
+          <button type="button" class="btn closeModal">Close</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- نافذة MasterCard -->
+    <div class="modal" id="mastercardModal">
+      <div class="modal-header">Enter card information MasterCard</div>
+      <form>
+        <label for="masterCardNumber">Card Number :</label>
+        <input type="text" id="masterCardNumber" name="cardNumber" placeholder="53xx xxxx xxxx xx44" required><br><br>
+        <label for="masterExpiryDate">Expiry Date :</label>
+        <input type="text" id="masterExpiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+        <div class="modal-footer">
+          <button type="button" class="btn closeModal">Close</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- نافذة PayPal -->
+    <div class="modal" id="paypalModal">
+      <div class="modal-header">Enter account information PayPal</div>
+      <form>
+        <label for="paypalEmail">Address E-mail :</label>
+        <input type="email" id="paypalEmail" name="email" placeholder="Your email" required><br><br>
+        <div class="modal-footer">
+          <button type="button" class="btn closeModal">Close</button>
+          <button type="submit" class="btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="input_section">
+      <form>
+        <label for="amount">Amount :</label>
+        <input type="text" id="amount" placeholder="min = 20.00 DH"><br><br>
+        <label for="recommended">Who recommended you ?</label>
+        <input type="text" id="recommended" placeholder="name of member"><br><br>
+      </form>
+      <div class="btn_section">
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="logo" id="logo">
+    <a href="#">
+      <img src="./Images/logo.jpg" alt="" width="80px">
+      <h3><span>CLUB</span>BAC</h3>
+    </a>
+    <hr>
+  </section>
+
+  <section class="footer" id="footer">
+    <div class="list_nav">
+      <ul>
+        <li><a href="#">Merch</a></li>
+        <li><a href="#">Vlogs</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Board Members</a></li>
+        <li><a href="#">Archives</a></li>
+        <li><a href="#">Donations</a></li>
+      </ul>
+    </div>
+    <div class="list_info">
+      <ul>
+        <li><a href="cart.html">View Cart</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <footer>
+    <p><i class='bx bx-copyright'></i> Club Bac, edition 2025</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    const paymentMethod = document.getElementById('paymentMethod');
+    const overlay = document.getElementById('overlay');
+    const modals = {
+      visa: document.getElementById('visaModal'),
+      mastercard: document.getElementById('mastercardModal'),
+      paypal: document.getElementById('paypalModal'),
+    };
+
+    // إظهار النافذة المناسبة
+    paymentMethod.addEventListener('change', (e) => {
+      // إخفاء جميع النوافذ
+      for (let modal in modals) {
+        modals[modal].classList.remove('active');
+      }
+      overlay.classList.remove('active');
+
+      // إظهار النافذة المحددة
+      const selectedValue = e.target.value;
+      if (modals[selectedValue]) {
+        modals[selectedValue].classList.add('active');
+        overlay.classList.add('active');
+      }
+    });
+
+    // إغلاق النافذة
+    const closeButtons = document.querySelectorAll('.closeModal');
+    closeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        for (let modal in modals) {
+          modals[modal].classList.remove('active');
+        }
+        overlay.classList.remove('active');
+      });
+    });
+
+    // إغلاق عند الضغط على الـ overlay
+    overlay.addEventListener('click', () => {
+      for (let modal in modals) {
+        modals[modal].classList.remove('active');
+      }
+      overlay.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Bac - Log In</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./user/style.css">
+  <link rel="icon" href="./user/Images/logo.jpg">
+</head>
+<body>
+
+    <section class="loader">
+      <div class="face face1">
+        <div class="circle"></div>
+      </div>
+      <div class="face face2">
+        <div class="circle"></div>
+      </div>
+    </section>
+  
+
+  <section class="page" id="page">
+    <div class="log_logo">
+      <img src="./user/Images/logo.jpg" alt="logo" width="80px">
+      <h2><span>CLUB</span>BAC</h2>
+    </div>
+    <h1>Welcome<span> Back! </span><img src="./user/Images/wave.gif" width="50px"></h1>
+    <div class="container">
+      <form class="log" id="loginForm">
+        <h2>Log In</h2>
+        <div class="input-box">
+          <input type="email" placeholder="Email" id="email" required>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" id="password" required>
+        </div>
+        <div class="remb-forg">
+          <label><input type="checkbox">Remember me</label>
+          <a href="#">Forget Password?</a>
+        </div>
+        <button type="submit" class="btn" onclick="login()">Log In</button>
+        <div class="register-link">
+          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+    
+  </section>
+  
+  <script src="sign.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const loader = document.querySelector('.loader');
+      const page = document.querySelector('.page');
+
+      // Simulate a delay for the loader (e.g., 3 seconds)
+      setTimeout(() => {
+        loader.style.display = 'none'; // Hide the loader
+        page.style.visibility = 'visible'; // Show the login page
+      }, 4000); // Adjust the delay as needed
+    });
+  </script>
+</body>
+</html>

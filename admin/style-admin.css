@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=League+Spartan:wght@100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Goudy Bookletter 1911", serif;
+}
+body{
+  background-color: black;
+  min-height: 100vh;
+}
+a{
+  text-decoration: none;
+}
+/*section{
+  padding: 50px 90px 10px 90px;
+}*/
+/*header{
+  position: fixed;
+  width: 100%;
+  height: 30px;
+}*/
+.navbar{
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+}
+.navbar .logo{
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+}
+.navbar .logo a{
+  display: flex;
+  align-items: center;
+  color: rgb(8, 155, 8);
+}
+.navbar .logo a img{
+  width: 60px;
+}
+.navbar .logo a h3 span{
+  color: white;
+}
+
+
+.dashboard{
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar_container{
+  position: fixed;
+  width: 18%;
+  height: 100vh;
+  background-color: black;
+  padding-block: 1rem 4.5rem;
+  border-right: 1px solid rgb(37, 37, 37);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.sidebar_container .sidebar_list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  font-size: 1.3em;
+  list-style: none;
+  margin-top: 80px;
+  margin-left: 20px;
+}
+.sidebar_item{
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 7px;
+  transition: 0.7s ease;
+}
+.sidebar_item:hover{
+  background-color: rgb(23, 23, 23);
+  padding: 10px;
+  margin-left: 0;
+  color: rgb(8, 155, 8);
+}
+.sidebar_item.active{
+  background-color: rgb(23, 23, 23);
+  padding: 10px;
+  margin-left: 0;
+  border-left: 5px solid rgb(8, 155, 8);
+  color: rgb(8, 155, 8);
+}
+.sidebar_item a{
+  color: white;
+}
+.sidebar_item a:hover, .sidebar_item a.active{
+  color: rgb(8, 155, 8);
+}
+.sidebar_item a i{
+  margin-right: 20px;
+}
+.user{
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  align-items: center;
+}
+.user img{
+  width: 50px;
+  border-radius: 50px;
+}
+.user h4{
+  color: white;
+  padding-left: 20px;
+}
+.user .bx-log-in{
+  background-color: rgb(255, 25, 25);
+  padding: 7px 10px 7px 7px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin-left: 15px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.user button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.user .bx-log-in:hover{
+  background-color: rgb(255, 50, 50);
+}
+
+.content{
+  color: white;
+  margin-top: 50px;
+  margin-left: 300px;
+  width: 79%;
+}
+.content .body_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+.content .body_title h1{
+  font-size: 2em;
+}
+.content .icon{
+  font-size: 1.3em;
+}
+.bxs-edit-alt, .bxs-trash{
+  padding: 10px;
+  background-color: rgb(23, 23, 23);
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.bxs-edit-alt:hover{
+  background-color: rgb(37, 37, 37);
+}
+.bxs-trash{
+  background-color: rgb(255, 25, 25);
+}
+.bxs-trash:hover{
+  background-color: rgb(255, 50, 50);
+}
+.dash_form{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.dash_form .title, .dash_form .description{
+  margin-bottom: 20px;
+}
+.dash_form label{
+  font-size: 1.1em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.dash_form input{
+  width: 95%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(37, 37, 37);
+  background-color: rgb(23, 23, 23);
+  color: white;
+  font-size: 1.1em;
+  margin: 20px 20px;
+  padding: 5px;
+}
+
+.dash_form button{
+  background-color: rgb(8, 155, 8);
+  margin-left: 20px;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dash_form ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+}
+.dash_form ul li{
+  background-color: rgb(23, 23, 23);
+  color: white;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid rgb(37, 37, 37);
+}
+.bx-x{
+  margin-left: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.dash_form textarea{
+  width: 95%;
+  height: 120px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(37, 37, 37);
+  background-color: rgb(23, 23, 23);
+  color: white;
+  font-size: 1.1em;
+  margin: 20px 20px;
+  padding: 5px;
+}
+/*.image_title{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}*/
+.image_title h3{
+  margin-left: 10px;
+}
+.Images{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.img_btn{
+  position: relative;
+}
+.img_btn img{
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  margin: 20px 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+.img_btn .bxs-trash{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.image_title button{
+  background-color: rgb(8, 155, 8);
+  margin-left: 20px;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+.image_title button:hover{
+  background-color: rgb(0, 118, 0);
+}
+.btn{
+  padding: 7px 15px;
+  font-weight: 600;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+.submit{
+  background-color: rgb(8, 155, 8);
+}
+.submit:hover{
+  background-color: rgb(0, 118, 0);
+}
+.discard{
+  background-color: rgb(255, 25, 25);
+}
+.discard:hover{
+  background-color: rgb(255, 50, 50);
+}
+
+/*  Dashboard page  */
+.card_box{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.card_box .card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+  border: 2px solid rgb(8, 155, 8);
+  border-radius: 8px;
+  padding: 30px 20px;
+  background-color: rgb(11, 11, 11);
+  box-shadow: 0 7px 25px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.card_box .card:hover{
+  background-color: rgb(8, 155, 8);
+  border: 2px solid white;
+}
+.card_box .card .number, .card_box .icon_box{
+  font-size: 2rem;
+}
+.card_box .card .text{
+  font-size: 0.9rem;
+}
+
+.details{
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+
+}
+.details .recent_orders{
+  display: grid;
+  min-height: 500px;
+  background-color: rgb(11, 11, 11);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid white;
+}
+.details .card_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card_header h2{
+  color: rgb(8, 155, 8);
+}
+.card_header .link{
+  padding: 5px 10px;
+  background-color: rgb(8, 155, 8);
+  text-decoration: none;
+  color: white;
+  border-radius: 6px;
+}
+.details table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details .recent_orders table tr{
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.details .recent_orders table tr:last-child{
+  border-bottom: none;
+}
+.details .recent_orders table thead tr{
+  color: gray;
+}
+.details .recent_orders table tbody tr{
+  transition: all 0.6s ease;
+}
+.details .recent_orders table tbody tr:hover{
+  background-color: rgb(8, 155, 8);
+}
+.details .recent_orders table tr td{
+  padding: 10px;
+}
+.status_return{
+  color: red;
+}
+.status_inprogress{
+  color: #e9b10a;
+}
+
+.recent_customers{
+  display: grid;
+  min-height: 500px;
+  background-color: rgb(11, 11, 11);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid white;
+}
+.recent_customers .img_box img{
+  width: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.recent_customers table tr:hover{
+  background-color: rgb(8, 155, 8);
+}
+
+
+/*   Orders admin Page   */
+
+.details_orders{
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  gap: 30px;
+
+}
+.details_orders .recent_orders{
+  display: grid;
+  height: 100vh;
+  background-color: rgb(11, 11, 11);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid white;
+}
+.details_orders table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details_orders .recent_orders table tr{
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.details_orders .recent_orders table tr:last-child{
+  border-bottom: none;
+}
+.details_orders .recent_orders table thead tr{
+  color: gray;
+}
+.details_orders .recent_orders table tbody tr{
+  transition: all 0.6s ease;
+}
+.details_orders .recent_orders table tbody tr:hover{
+  background-color: rgb(8, 155, 8);
+}
+.details_orders .recent_orders table tr td{
+  padding: 10px;
+}
+
+
+@media screen and (max-width: 1030px) {
+  .sidebar_container{
+    width: 30%;
+  }
+  .sidebar_container .sidebar_list{
+    margin-top: 100px;
+    row-gap: 80px;
+  }
+  .content{
+    width: 79%;
+  }
+  .Images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width: 830px) {
+  .sidebar_container .sidebar_list{
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-top: 80px;
+  }
+  .sidebar_container{
+    width: 33%;
+  }
+  .user{
+    left: 12px;
+    bottom: 20px;
+  }
+  .user img{
+    width: 35px;
+  }
+  .user h4{
+    padding-left: 10px;
+  }
+  .content{
+    width: 60%;
+    margin-left: 250px;
+  }
+  .Images{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .img_btn img{
+    height: 370px;
+    width: 370px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .navbar .logo{
+    padding: 10px 20px;
+  }
+  .navbar .logo a img{
+    width: 40px;
+  }
+  .navbar .logo a h3{
+    font-size: 0.9em;
+  }
+  .content .body_title h1{
+    font-size: 1.2em;
+  }
+  .content .icon{
+    font-size: 1em;
+  }
+  .sidebar_link{
+    display: flex;
+  }
+  .sidebar_container .sidebar_list{
+    font-size: 1.3em;
+    margin-left: 0px;
+    row-gap: 40px;
+  }
+  .sidebar_container{
+    width: 13%;
+  }
+  .user{
+    display: flex;
+    flex-direction: column;
+    left: 10px;
+  }
+  .user img{
+    width: 35px;
+  }
+  .user h4{
+    display: none;
+  }
+  .user .bx-log-in{
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .content{
+    width: 80%;
+    margin-left: 60px;
+  }
+  .bxs-trash{
+    margin-right: 0;
+  }
+  .Images{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .img_btn img{
+    height: 300px;
+    width: 300px;
+  }
+}
