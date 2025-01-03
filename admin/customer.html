@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Bac - Customers admin</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style-admin.css">
+  <link rel="icon" href="../user/Images/logo.jpg">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="">
+          <img src="../user/Images/logo.jpg" alt="logo">
+          <h3><span>CLUB</span>BAC</h3>
+        </a>
+      </div>
+      
+    </nav>
+  </header>
+
+  <section class="dashboard" id="dashboard">
+    <div class="sidebar_container" id="sidebar-container">
+      <ul class="sidebar_list">
+        <li class="sidebar_item">
+          <a href="dashboard.html" class="sidebar_link"><i class="bx bxs-dashboard icon_btn"></i> Dashboard</a>
+        </li>
+        <li class="sidebar_item">
+          <a href="products-admin.html" class="sidebar_link"><i class='bx bxs-user-account icon_btn'></i> Products</a>
+        </li>
+        <li class="sidebar_item">
+          <a href="video.html" class="sidebar_link"><i class='bx bxs-video-plus'></i> Videos</a>
+        </li>
+        <li class="sidebar_item">
+          <a href="order.html" class="sidebar_link"><i class='bx bxs-shopping-bags icon_btn'></i> Orders</a>
+        </li>
+        <li class="sidebar_item active">
+          <a href="customer.html" class="sidebar_link active"><i class='bx bxs-user-account icon_btn'></i> Customers</a>
+        </li> 
+      </ul>
+      <div class="user">
+        <img src="../user/Images/Abdelhamid-Kada.jpg" alt="user">
+        <h4>Abdelhamid Kada</h4>
+        <button onclick="logout()"><i class='bx bx-log-in' title="Log out"></i></button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="body_title">
+        <h1>Customers</h1>
+        <div class="search_input">
+          <input type="text" placeholder="Search.." class="search" id="searchInput" onkeyup="filterTable()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
+      </div>
+      <hr>
+
+
+
+    </div>
+  </section>
+  <!--<script src="logout.js"></script>-->
+  <script>
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    // logout
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+  </script>
+  
+  <script src="./scripts/search.js"></script>
+  <script src="./scripts/main-admin.js"></script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Bac</title>
+  <title>Club Bac - Edit Products admin</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="style-admin.css">
@@ -73,32 +73,29 @@
             <div class="image_title">
               <h3>Image</h3>
               <div class="Images">
+
+                <!--
                 <div class="img_btn">
                   <img src="../user/Images/logo.jpg" alt="product">
                   <i class="bx bxs-trash"></i>
                 </div>
-                <div class="img_btn">
-                  <img src="../user/Images/logo.jpg" alt="product">
-                  <i class="bx bxs-trash"></i>
-                </div>
-                <div class="img_btn">
-                  <img src="../user/Images/logo.jpg" alt="product">
-                  <i class="bx bxs-trash"></i>
-                </div>
-                <div class="img_btn">
-                  <img src="../user/Images/logo.jpg" alt="product">
-                  <i class="bx bxs-trash"></i>
+                 -->
+
+
+              <div class="image-upload">
+                <input type="file" id="imageInput" class="upload_img" accept="image/*" multiple onchange="displayImages()">
+                <div class="image-preview" id="imagePreview">
                 </div>
               </div>
-              <button> <i class='bx bx-plus' ></i> Upload Image</button>
+            
             </div>
           </div>
           <div class="price">
-            <label for="price">Price ($)</label>
+            <label for="price">Price (MAD)</label>
             <input type="text" id="price" class="inp_title">
           </div>
           <div class="expense">
-            <label for="expense">Expense ($)</label>
+            <label for="expense">Expense (MAD)</label>
             <input type="text" id="expense" class="inp_title">
           </div>
           <div class="category">
@@ -141,6 +138,7 @@
       window.location.href = '../login.html';
     }
   </script>
+  <script src="./scripts/upload_image.js"></script>
   <script src="./scripts/main-admin.js"></script>
 
 </body>

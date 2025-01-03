@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Bac</title>
+  <title>Club Bac - Orders admin</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
@@ -51,13 +51,17 @@
     <div class="content">
       <div class="body_title">
         <h1>Orders</h1>
+        <div class="search_input">
+          <input type="text" placeholder="Search.." class="search" id="searchInput" onkeyup="filterTable()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
       </div>
       <hr>
 
       <div class="details_orders">
         <div class="recent_orders">
 
-          <table>
+          <table id="ordersTable">
             <thead>
               <tr>
                 <td>Name</td>
@@ -80,7 +84,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Salaheddine NAJID</td>
                 <td>3</td>
                 <td>Medium</td>
                 <td>600 MAD</td>
@@ -89,7 +93,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Abdellah KABLY</td>
                 <td>1</td>
                 <td>Medium</td>
                 <td>200 MAD</td>
@@ -98,7 +102,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Hind JAA</td>
                 <td>3</td>
                 <td>Large</td>
                 <td>600 MAD</td>
@@ -107,7 +111,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Hajar NID BELAID</td>
                 <td>1</td>
                 <td>Large</td>
                 <td>200 MAD</td>
@@ -116,7 +120,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Houda HARRARI</td>
                 <td>2</td>
                 <td>Small</td>
                 <td>400 MAD</td>
@@ -125,7 +129,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Salma ID MHAND</td>
                 <td>1</td>
                 <td>Medium</td>
                 <td>200 MAD</td>
@@ -134,7 +138,7 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Youssra LAARISSI</td>
                 <td>1</td>
                 <td>Medium</td>
                 <td>200 MAD</td>
@@ -143,12 +147,48 @@
               </tr>
 
               <tr>
-                <td>Abdelhamid Kada</td>
+                <td>Idriss SALIM</td>
                 <td>1</td>
                 <td>Medium</td>
                 <td>200 MAD</td>
                 <td>Paid</td>
                 <td><span class="status_return">Return</span></td>
+              </tr>
+
+              <tr>
+                <td>Walid AZHAR</td>
+                <td>1</td>
+                <td>Medium</td>
+                <td>200 MAD</td>
+                <td>Paid</td>
+                <td><span class="status_return">Return</span></td>
+              </tr>
+
+              <tr>
+                <td>Redouane Ezzamouri</td>
+                <td>1</td>
+                <td>Medium</td>
+                <td>200 MAD</td>
+                <td>Paid</td>
+                <td><span class="status_delivered">Delivered</span></td>
+              </tr>
+
+              <tr>
+                <td>Ismail Oubihi</td>
+                <td>1</td>
+                <td>Medium</td>
+                <td>200 MAD</td>
+                <td>Paid</td>
+                <td><span class="status_delivered">Delivered</span></td>
+              </tr>
+
+              <tr>
+                <td>Youness Mojahid</td>
+                <td>1</td>
+                <td>Medium</td>
+                <td>200 MAD</td>
+                <td>Paid</td>
+                <td><span class="status_inprogress">In Progress</span></td>
               </tr>
             </tbody>
           </table>
@@ -168,6 +208,8 @@
       window.location.href = '../login.html';
     }
   </script>
+
+  <script src="./scripts/search.js"></script>
   
   <script src="./scripts/main-admin.js"></script>
 

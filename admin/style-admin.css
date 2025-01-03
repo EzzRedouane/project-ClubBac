@@ -240,34 +240,66 @@ a{
   margin: 20px 20px;
   padding: 5px;
 }
-/*.image_title{
+.image_title{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-}*/
-.image_title h3{
-  margin-left: 10px;
 }
-.Images{
+
+/************ test ************/
+
+.image_title .upload_img{
+  background-color: black;
+  border: none;
+}
+
+.image-upload {
+  margin: 20px;
+  text-align: center;
+}
+
+.image-upload input[type="file"] {
+  display: block;
+  margin: 10px auto;
+}
+
+.image-preview {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.image-preview img {
+  max-width: 200px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.image_title{
+  display: flex;
+  flex-direction: column;
+}
+.image_title h3{
+  margin-left: 10px;
+}
+
 .img_btn{
   position: relative;
 }
-.img_btn img{
+/* .img_btn img{
   height: 250px;
   width: 250px;
   background-size: cover;
   margin: 20px 20px;
   border: 1px solid white;
   border-radius: 4px;
-}
+} */
 .img_btn .bxs-trash{
   position: absolute;
   top: 20px;
   left: 20px;
 }
+/*
 .image_title button{
   background-color: rgb(8, 155, 8);
   margin-left: 20px;
@@ -280,11 +312,12 @@ a{
   margin-bottom: 30px;
   border-radius: 5px;
   cursor: pointer;
-  
+
 }
 .image_title button:hover{
   background-color: rgb(0, 118, 0);
 }
+*/
 .btn{
   padding: 7px 15px;
   font-weight: 600;
@@ -310,6 +343,34 @@ a{
 }
 
 /*  Dashboard page  */
+.search_input{
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 30%;
+}
+.search{
+  padding: 5px 20px;
+  width: 100%;
+  background-color: rgb(11, 11, 11);
+  border: 1px solid white;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.02rem;
+}
+.fa-magnifying-glass{
+  position: absolute;
+  right: 0px;
+  background-color: rgb(8, 155, 8);
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.fa-magnifying-glass:hover{
+  background-color: rgb(0, 118, 0);
+}
+
 .card_box{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -429,7 +490,6 @@ a{
 }
 .details_orders .recent_orders{
   display: grid;
-  height: 100vh;
   background-color: rgb(11, 11, 11);
   border-radius: 20px;
   padding: 20px;
@@ -527,6 +587,14 @@ a{
   }
   .content .icon{
     font-size: 1em;
+  }
+  .sidebar_item.active{
+    border: none;
+    background-color: black;
+    padding: 15px;
+  }
+  .sidebar_item:hover{
+    background-color: black;
   }
   .sidebar_link{
     display: flex;
