@@ -42,14 +42,14 @@ const form = document.getElementById('loginForm');
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      if (email === 'redouanezamouri@gmail.com' && password === '11111111') {
+      if (email === 'admin@gmail.com' && password === '11111111') {
         // Store login status in localStorage
         localStorage.setItem('isLoggedIn', 'true');
 
         // Redirect to the Admin Page
         window.location.href = './admin/dashboard.html';  // Change this to your actual admin page URL
       }
-      else if(email === 'redouanezamouri@gmail.com' && password === '22222222'){
+      else if(email === 'user@gmail.com' && password === '22222222'){
         localStorage.setItem('isLoggedIn', 'true');
         window.location.href = './user/home.html';
       }

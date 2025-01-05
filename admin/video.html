@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Bac - Videos admin</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="style-admin.css">
+  <link rel="icon" href="../user/Images/logo.jpg">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="">
+          <img src="../user/Images/logo.jpg" alt="logo">
+          <h3><span>CLUB</span>BAC</h3>
+        </a>
+      </div>
+      
+    </nav>
+  </header>
+
+  <section class="dashboard" id="dashboard">
+    <div class="sidebar_container" id="sidebar-container">
+      <ul class="sidebar_list">
+        <li class="sidebar_item" title="Dashboard">
+          <a href="dashboard.html" class="sidebar_link"><i class="bx bxs-dashboard icon_btn"></i> Dashboard</a>
+        </li>
+        <li class="sidebar_item" title="Products">
+          <a href="product.html" class="sidebar_link"><i class='bx bxs-user-account icon_btn'></i> Products</a>
+        </li>
+        <li class="sidebar_item active" title="Videos">
+          <a href="video.html" class="sidebar_link active"><i class='bx bxs-video-plus'></i> Videos</a>
+        </li>
+        <li class="sidebar_item" title="Orders">
+          <a href="order.html" class="sidebar_link"><i class='bx bxs-shopping-bags icon_btn'></i> Orders</a>
+        </li>
+        <li class="sidebar_item" title="Customers">
+          <a href="customer.html" class="sidebar_link"><i class='bx bxs-user-account icon_btn'></i> Customers</a>
+        </li> 
+      </ul>
+      <div class="user">
+        <img src="../user/Images/Abdelhamid-Kada.jpg" alt="user" title="User">
+        <h4>Abdelhamid Kada</h4>
+        <button onclick="logout()"><i class='bx bx-log-in' title="Log out"></i></button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="body_title">
+        <h1>Videos</h1>
+        <div class="icon">
+          <a href="edit-video.html"><i class='bx bxs-edit-alt' ></i></a>
+        </div>
+
+      </div>
+      <hr>
+
+      <div class="video" id="video-container">
+        <!-- Dynamic content will be appended here -->
+      </div>
+      <!--
+      <div class="video">
+
+        <div class="video_container">
+          <div class="mint_info">
+            <img src="../user/Images/background.webp" alt="miniature">
+            <div class="infos">
+              <h3>Title</h3>
+              <p>01/01/2025</p>
+              <p>13 Likes</p>
+            </div>
+          </div>
+          <div class="icon">
+            <i class='bx bx-dots-vertical-rounded'></i>
+          </div>
+        </div>
+
+        <div class="video_container">
+          <div class="mint_info">
+            <img src="../user/Images/background.webp" alt="miniature">
+            <div class="infos">
+              <h3>Title</h3>
+              <p>01/01/2025</p>
+              <p>13 Likes</p>
+            </div>
+          </div>
+          <div class="icon">
+            <i class='bx bx-dots-vertical-rounded'></i>
+          </div>
+        </div>
+
+        <div class="video_container">
+          <div class="mint_info">
+            <img src="../user/Images/background.webp" alt="miniature">
+            <div class="infos">
+              <h3>Title</h3>
+              <p>01/01/2025</p>
+              <p>13 Likes</p>
+            </div>
+          </div>
+          <div class="icon">
+            <i class='bx bx-dots-vertical-rounded'></i>
+          </div>
+        </div>
+
+      </div>
+
+      -->
+
+      
+    </div>
+  </section>
+
+  <script>
+    window.onload = function () {
+      const videos = JSON.parse(localStorage.getItem('videos')) || []; // Get all videos
+
+      if (videos.length > 0) {
+        const container = document.getElementById('video-container');
+
+        videos.forEach(video => {
+          // Create a new video container
+          const videoContainer = document.createElement('div');
+          videoContainer.classList.add('video_container');
+
+          // Create mint info section
+          const mintInfo = document.createElement('div');
+          mintInfo.classList.add('mint_info');
+
+          // Create video thumbnail
+          const thumbnail = document.createElement('video');
+          thumbnail.src = video.videoData; // Use the video data as the thumbnail
+          thumbnail.alt = 'Video Thumbnail';
+          thumbnail.style.width = "220px";
+          thumbnail.style.height = "160px";
+          thumbnail.style.marginRight = "20px";
+          thumbnail.controls = true;
+          mintInfo.appendChild(thumbnail);
+
+          // Create infos section
+          const infos = document.createElement('div');
+          infos.classList.add('infos');
+
+          const titleElement = document.createElement('h3');
+          titleElement.textContent = video.title;
+
+          const descriptionElement = document.createElement('p');
+          descriptionElement.textContent = `Description: ${video.description}`;
+
+          const dateElement = document.createElement('p');
+          dateElement.textContent = video.date;
+
+          const likesElement = document.createElement('p');
+          likesElement.textContent = `${video.likes} Likes`;
+
+          infos.appendChild(titleElement);
+          infos.appendChild(dateElement);
+          infos.appendChild(descriptionElement);
+          infos.appendChild(likesElement);
+
+          mintInfo.appendChild(infos);
+          videoContainer.appendChild(mintInfo);
+
+          // Create icon section
+          const icon = document.createElement('div');
+          icon.classList.add('icon');
+
+          const iconTrashElement = document.createElement('i');
+          iconTrashElement.className = 'bx bxs-trash';
+          iconTrashElement.title = "Delete";
+
+          const iconDotElement = document.createElement('i');
+          iconDotElement.className = 'bx bx-dots-vertical-rounded';
+          iconDotElement.title = "More Options";
+
+          icon.appendChild(iconTrashElement);
+          icon.appendChild(iconDotElement);
+
+          videoContainer.appendChild(icon);
+
+          // Append video container to main container
+          container.appendChild(videoContainer);
+        });
+      } else {
+        document.getElementById('video-container').innerHTML = '<p>No video data available.</p>';
+      }
+    };
+  </script>
+
+  <script>
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    // logout
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+  </script>
+  <script src="./scripts/main-admin.js"></script>
+
+</body>
+</html>
