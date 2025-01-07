@@ -1,3 +1,4 @@
+/*    Video Page    */
 function submitHandler() {
   const title = document.getElementById('title').value;
   const description = document.getElementById('description').value;
@@ -29,6 +30,8 @@ function submitHandler() {
   }
 };
 
-function resetHandler(){
-
+function resetHandler() {
+  document.getElementById('form').reset();
+  document.getElementById('video-display').innerHTML = '';
+  localStorage.removeItem('videoData');
 }

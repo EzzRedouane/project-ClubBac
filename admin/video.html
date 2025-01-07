@@ -54,74 +54,24 @@
         <div class="icon">
           <a href="edit-video.html"><i class='bx bxs-edit-alt' ></i></a>
         </div>
-
       </div>
       <hr>
 
       <div class="video" id="video-container">
         <!-- Dynamic content will be appended here -->
       </div>
-      <!--
-      <div class="video">
-
-        <div class="video_container">
-          <div class="mint_info">
-            <img src="../user/Images/background.webp" alt="miniature">
-            <div class="infos">
-              <h3>Title</h3>
-              <p>01/01/2025</p>
-              <p>13 Likes</p>
-            </div>
-          </div>
-          <div class="icon">
-            <i class='bx bx-dots-vertical-rounded'></i>
-          </div>
-        </div>
-
-        <div class="video_container">
-          <div class="mint_info">
-            <img src="../user/Images/background.webp" alt="miniature">
-            <div class="infos">
-              <h3>Title</h3>
-              <p>01/01/2025</p>
-              <p>13 Likes</p>
-            </div>
-          </div>
-          <div class="icon">
-            <i class='bx bx-dots-vertical-rounded'></i>
-          </div>
-        </div>
-
-        <div class="video_container">
-          <div class="mint_info">
-            <img src="../user/Images/background.webp" alt="miniature">
-            <div class="infos">
-              <h3>Title</h3>
-              <p>01/01/2025</p>
-              <p>13 Likes</p>
-            </div>
-          </div>
-          <div class="icon">
-            <i class='bx bx-dots-vertical-rounded'></i>
-          </div>
-        </div>
-
-      </div>
-
-      -->
-
       
     </div>
   </section>
 
   <script>
     window.onload = function () {
-      const videos = JSON.parse(localStorage.getItem('videos')) || []; // Get all videos
+      let videos = JSON.parse(localStorage.getItem('videos')) || []; // Get all videos from localStorage
+
+      const container = document.getElementById('video-container');
 
       if (videos.length > 0) {
-        const container = document.getElementById('video-container');
-
-        videos.forEach(video => {
+        videos.forEach((video, index) => {
           // Create a new video container
           const videoContainer = document.createElement('div');
           videoContainer.classList.add('video_container');
@@ -172,12 +122,15 @@
           iconTrashElement.className = 'bx bxs-trash';
           iconTrashElement.title = "Delete";
 
-          const iconDotElement = document.createElement('i');
-          iconDotElement.className = 'bx bx-dots-vertical-rounded';
-          iconDotElement.title = "More Options";
+          // Add event listener to delete the video container
+          iconTrashElement.addEventListener('click', function () {
+            container.removeChild(videoContainer); // Remove the video container from the DOM
+            videos.splice(index, 1); // Remove the video from the videos array
+            localStorage.setItem('videos', JSON.stringify(videos)); // Update localStorage
+          });
+
 
           icon.appendChild(iconTrashElement);
-          icon.appendChild(iconDotElement);
 
           videoContainer.appendChild(icon);
 
@@ -185,9 +138,10 @@
           container.appendChild(videoContainer);
         });
       } else {
-        document.getElementById('video-container').innerHTML = '<p>No video data available.</p>';
+        container.innerHTML = '<p>No video data available.</p>';
       }
     };
+
   </script>
 
   <script>

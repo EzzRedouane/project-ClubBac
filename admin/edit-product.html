@@ -52,8 +52,7 @@
       <div class="body_title">
         <h1>Edit Product</h1>
         <div class="icon">
-          <a href="edit-video.html"><i class='bx bxs-edit-alt' ></i></a>
-          <i class='bx bxs-trash'></i>
+          <button class="reset" onclick="handleFormDiscard()"><i class='bx bxs-trash'></i></button>
         </div>
       </div>
       <hr>
@@ -74,12 +73,6 @@
               <h3>Image</h3>
               <div class="Images">
 
-                <!--
-                <div class="img_btn">
-                  <img src="../user/Images/logo.jpg" alt="product">
-                  <i class="bx bxs-trash"></i>
-                </div>
-                 -->
 
 
               <div class="image-upload">
@@ -87,7 +80,14 @@
                 <div class="image-preview" id="imagePreview">
                 </div>
               </div>
-            
+<!-- 
+              <div class="image-upload">
+                <input type="file" id="imageInput" class="upload_img" accept="image/*">
+                <div class="image-preview" id="imagePreview">
+                </div>
+              </div>  
+--> 
+
             </div>
           </div>
           <div class="price">
@@ -121,13 +121,15 @@
             <ul class="js-list"></ul>
           </div>
           </div>
-          <button type="submit" class="submit btn" onclick="handleFormSubmit()">Submit</button>
-          <button type="reset" class="discard btn">Discard</button>
+          <button type="submit" class="submit btn" onclick="submitHandlerImage()">Submit</button>
+          <button type="reset" class="discard btn" onclick="handleFormDiscard()">Discard</button>
         </form>
         
       </div>
     </div>
   </section>
+
+  
   <script>
     // Check if the user is logged in
     const isLoggedIn = localStorage.getItem('isLoggedIn');
@@ -139,6 +141,7 @@
     }
   </script>
   <script src="./scripts/upload_image.js"></script>
+  <script src="./scripts/submit-reset.js"></script>
   <script src="./scripts/main-admin.js"></script>
 
 </body>
