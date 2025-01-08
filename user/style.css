@@ -432,10 +432,6 @@ header{
 .list_info ul li a:hover{
   color: rgb(8, 155, 8);
 }
-.list_bank{
-  display: flex;
-  align-items: center;
-}
 
 footer{
   text-align: center;
@@ -648,114 +644,6 @@ canvas{
 }
 
 
-/*  Checkout page  */
-/*
-section .checkout{
-  display: flex;
-  justify-content: center;
-}
-.checkout{
-  display: inline-block;
-  text-align: start;
-  margin: 120px 350px;
-  width: 50%;
-  border-radius: 20px;
-  border: 2px solid rgb(37, 37, 37);
-  background-color: rgb(11, 11, 11);
-}
-.checkout .delivery{
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid rgb(37, 37, 37);
-  background-color: rgb(23, 23, 23);
-  margin-bottom: 30px;
-}
-.checkout .delivery h3{
-  text-align: center;
-  color: rgb(8, 155, 8);
-  padding-bottom: 20px;
-  font-size: 1.4em;
-}
-.checkout .delivery .delivery_input{
-  padding-bottom: 20px;
-}
-.checkout .delivery .delivery_input p{
-  color: white;
-  padding-bottom: 6px;
-}
-.checkout .delivery .delivery_input input{
-  outline: none;
-  border-radius: 15px;
-  border: 1px solid black;
-  padding: 10px 20px;
-  width: 60%;
-  font-size: 1.1em;
-}
-
-.checkout .payment{
-  padding: 30px;
-  border-radius: 20px;
-  border: 1px solid rgb(37, 37, 37);
-  background-color: rgb(23, 23, 23);
-  margin-bottom: 50px;
-}
-.checkout .payment h3{
-  text-align: center;
-  color: rgb(8, 155, 8);
-  padding-bottom: 20px;
-  font-size: 1.4em;
-}
-.payment .payment_select p{
-  color: white;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-.payment .payment_select select{
-  padding: 7px 14px;
-  width: 30%;
-  font-size: 1.1em;
-}
-.payment .payment_input{
-  margin-top: 20px;
-}
-.checkout .payment .payment_input p{
-  color: white;
-  padding-bottom: 6px;
-}
-.checkout .payment .payment_input input{
-  outline: none;
-  border-radius: 15px;
-  border: 1px solid black;
-  padding: 10px 20px;
-  width: 60%;
-  font-size: 1.1em;
-}
-.payment .payment_input .price{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.payment .payment_input .price p{
-  color: white;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-.payment .payment_input .apply button{
-  padding: 7px 14px;
-  color: white;
-  font-size: 1.1em;
-  background-color: rgb(8, 155, 8);
-  outline: none;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-}
-.payment .payment_input .apply button:hover{
-  background-color: rgb(0, 93, 0);
-}
-*/
-
-
 /*  Board Member -- Profile -- Page  */
 
 .profile_page .title{
@@ -871,21 +759,6 @@ section .checkout{
   padding-top: 10px ;
 }
 
-/*.more_btn{
-  background-color: rgb(8, 155, 8);
-  color: white;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  padding: 3px;
-  position: relative;
-  top: 8px;
-  cursor: pointer;
-}
-.more_btn:hover{
-  background-color: rgb(0, 93, 0);
-
-}*/
 
 /*  Articles page  */
 .article .title{
@@ -1334,6 +1207,9 @@ canvas{
   .contact_img{
     margin-right: 55px;
   }
+  .footer {
+    padding: 20px 150px 30px 150px;
+  }
 
    /*  Vlogs Page  */
    .video {
@@ -1399,6 +1275,45 @@ canvas{
     padding-left: 480px;
   }
 
+  /*  Profile page   */
+  .profile_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile_subcontainer {
+    width: 600px; /* Reduce width */
+    height: auto; /* Let height adjust naturally */
+    padding: 20px;
+  }
+
+  .profile_img img {
+    width: 130px; /* Reduce image size */
+  }
+
+  .profile_name h3 {
+    font-size: 1.8em; /* Slightly smaller font size */
+    padding-left: 30px;
+  }
+
+  .profile_subinfo .profile_title p,
+  .profile_subinfo .profile_subtitle p {
+    font-size: 1.1em; /* Adjust text size */
+  }
+
+  .profile_about h4 {
+    font-size: 1.5em;
+  }
+
+  .profile_about p {
+    font-size: 1.1em;
+  }
+
+  .profile_icon a {
+    font-size: 1.2em;
+    padding: 15px 25px;
+  }
+
   /* Log In page */
   .page {
     padding: 30px 100px 0 100px;
@@ -1445,6 +1360,9 @@ canvas{
   }
   .contact_img{
     margin-right: 55px;
+  }
+  .footer {
+    padding: 20px 100px 30px 100px;
   }
 
   /*  Vlogs Page  */
@@ -1543,6 +1461,39 @@ canvas{
     margin-bottom: 20px;
   }
 
+  /*   Profile page   */
+  .profile_subcontainer {
+    width: 500px;
+    padding: 15px;
+  }
+
+  .profile_img img {
+    width: 120px;
+  }
+
+  .profile_name h3 {
+    font-size: 1.6em;
+    padding-left: 20px;
+  }
+
+  .profile_subinfo .profile_title p,
+  .profile_subinfo .profile_subtitle p {
+    font-size: 1em;
+  }
+
+  .profile_about h4 {
+    font-size: 1.4em;
+  }
+
+  .profile_about p {
+    font-size: 1em;
+  }
+
+  .profile_icon a {
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+
   /*  Donation  */
   .input_section input{
     width: 40%;
@@ -1588,25 +1539,10 @@ canvas{
 
 @media screen and (max-width : 720px){
   /*   Home Page   */
-  /*.navbar_container .navbar_list .navbar_item{
-    margin: 0 10px;
-    font-size: 0.8em;
-  }
-  .navbar{
-    padding: 0px 30px;
-  }
-  .bx-menu{
-    display: block;
-  }*/
+  
   section{
     padding: 50px 50px 10px 50px;
   }
-  /*.navbar .logo a img{
-    width: 50px;
-  }
-  .navbar .logo a h3{
-    font-size: 0.8em;
-  }*/
   .nav_contact{
     display: block;
   }
@@ -1691,6 +1627,16 @@ canvas{
     color: white;
     font-size: 0.8em;
     margin-right: 10px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 50px 30px 50px;
+  }
+  .list_nav ul,
+  .list_info ul {
+    margin-bottom: 20px;
   }
 
 
@@ -1819,6 +1765,44 @@ canvas{
     margin-bottom: 20px;
   }
 
+  /*  Profile page   */
+  .profile_subcontainer {
+    width: 100%; /* Full width for smaller devices */
+    margin: 0 10px; /* Add some margin for spacing */
+  }
+
+  .profile_img img {
+    width: 100px;
+  }
+
+  .profile_name h3 {
+    font-size: 1.4em;
+    padding-left: 15px;
+  }
+
+  .profile_subinfo {
+    flex-direction: column; /* Stack titles vertically */
+  }
+
+  .profile_subinfo .profile_title p,
+  .profile_subinfo .profile_subtitle p {
+    font-size: 0.9em;
+    padding-left: 0; /* Align text to the left */
+  }
+
+  .profile_about h4 {
+    font-size: 1.2em;
+  }
+
+  .profile_about p {
+    font-size: 0.9em;
+  }
+
+  .profile_icon a {
+    font-size: 1em;
+    padding: 10px;
+  }
+
   /* Donatiom  */
   .input_section input{
     width: 50%;
@@ -1862,10 +1846,85 @@ canvas{
 
 /*   Phone screen Responsive   */
 @media screen and (max-width = 420px){
+  .footer {
+    padding: 20px;
+  }
+  .list_nav ul li a,
+  .list_info ul li a {
+    font-size: 0.9rem;
+  }
 
   .merch .merch-container{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  /*  Vlog Video   */
+  .video {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .big_video .vlog_video {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .big_video .vlog_video video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .big_video .video_info {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 10px; /* Add some padding for content alignment */
+  }
+
+  .video_info .vlog_video_info {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .video_info .vlog_video_icon a {
+    font-size: 0.9em; /* Slightly smaller icons */
+    margin-right: 8px;
+    margin-bottom: 20px;
+  }
+
+  .small_video {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .video_scroll {
+    height: 300px; /* Adjust scroll height for smaller screens */
+  }
+
+  .video_section {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .video_section .video_section_img img {
+    width: 80px; /* Reduce image size */
+  }
+
+  .video_section .video_section_description {
+    padding-left: 10px; /* Reduce left padding */
+    margin-top: 5px; /* Reduce margin */
+  }
+
+  .video_section_description h5 {
+    font-size: 0.7em; /* Smaller text for descriptions */
+  }
+
+  .video_section_icon {
+    padding-left: 0; /* Align icons to the left */
+    margin-top: 10px; /* Add spacing for better layout */
   }
 
   /*  Articles  */
@@ -1887,6 +1946,46 @@ canvas{
 
   .article_subcontainer .article_title p {
     font-size: 0.9em; /* Reduce text size for better fit */
+  }
+
+  /*   Profile page   */
+  .profile_subcontainer {
+    width: 100%; /* Use full width */
+    margin: 0 10px;
+    padding: 10px; /* Reduce padding */
+  }
+
+  .profile_img img {
+    width: 80px; /* Smaller image */
+  }
+
+  .profile_name h3 {
+    font-size: 1.2em;
+    padding-left: 10px;
+  }
+
+  .profile_subinfo {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px;
+  }
+
+  .profile_subinfo .profile_title p,
+  .profile_subinfo .profile_subtitle p {
+    font-size: 0.8em;
+  }
+
+  .profile_about h4 {
+    font-size: 1em;
+  }
+
+  .profile_about p {
+    font-size: 0.8em;
+  }
+
+  .profile_icon a {
+    font-size: 0.9em;
+    padding: 5px 10px;
   }
   
 
