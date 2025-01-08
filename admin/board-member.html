@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Bac - Customers admin</title>
+  <title>Club Bac - Board Members admin</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
@@ -39,7 +39,7 @@
           <a href="order.html" class="sidebar_link"><i class='bx bxs-shopping-bags icon_btn'></i> Orders</a>
         </li>
         <li class="sidebar_item active">
-          <a href="customer.html" class="sidebar_link active"><i class='bx bxs-user-account icon_btn'></i> Customers</a>
+          <a href="board-member.html" class="sidebar_link active"><i class='bx bxs-user-account icon_btn'></i> Board Members</a>
         </li> 
       </ul>
       <div class="user">
@@ -50,7 +50,7 @@
     </div>
     <div class="content">
       <div class="body_title">
-        <h1>Customers</h1>
+        <h1>Board Members</h1>
         <div class="search_input">
           <input type="text" placeholder="Search.." class="search" id="searchInput" onkeyup="filterTable()">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -58,6 +58,59 @@
         
       </div>
       <hr>
+      <div class="member_input">
+        <form>
+          <div class="input">
+            <label for="name">Name: </label>
+            <input type="text" id="name">
+            <label for="sector">Sector: </label>
+            <input type="text" id="sector">
+            <label for="address">Address: </label>
+            <input type="text" id="address">
+            <label for="about">About: </label>
+            <textarea id="about"></textarea>
+            <label for="linkedin">LinkedIn: </label>
+            <input type="text" id="linkedin">
+            <label for="instagram">Instagram: </label>
+            <input type="text" id="instagram">
+            <div class="image-upload">
+              <input type="file" id="imageInput" class="upload_img" accept="image/*" onchange="displayImages()">
+              <div class="image-preview" id="imagePreview">
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button class="save">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="details_orders">
+        <div class="recent_orders">
+          
+
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <td>Image</td>
+                <td>Name</td>
+                <td>Sector</td>
+                <td>Address</td>
+                <td>About</td>
+                <td>LinkedIn</td>
+                <td>Instagram</td>
+                <td>Delete</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              
+
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
 
 
 
@@ -74,7 +127,8 @@
       window.location.href = '../login.html';
     }
   </script>
-  
+  <script src="./scripts/board-member.js"></script>
+  <script src="./scripts/upload_image.js"></script>
   <script src="./scripts/search.js"></script>
   <script src="./scripts/main-admin.js"></script>
 

@@ -516,6 +516,44 @@ a{
 .details_orders .recent_orders table tr td{
   padding: 10px;
 }
+.details_orders .recent_orders table tr td a{
+  color: white;
+}
+.details_orders .recent_orders table tr td img{
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+
+/*  board member admin page   */
+.member_input{
+  margin: 30px ;
+}
+.member_input .input{
+  display: flex;
+  flex-direction: column;
+  
+}
+.member_input .input input, .member_input .input textarea{
+  background-color: rgb(11, 11, 11);
+  padding: 7px 15px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+  color: white;
+}
+.member_input .save{
+  background-color: rgb(8, 155, 8);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 15px;
+  color: white;
+  cursor: pointer;
+}
+.member_input .save:hover{
+  background-color: rgb(0, 118, 0);
+}
 
 /*   Video admin page   */
 .video{
