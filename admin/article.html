@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Bac - Articles admin</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="style-admin.css">
+  <link rel="icon" href="../user/Images/logo.jpg">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="">
+          <img src="../user/Images/logo.jpg" alt="logo">
+          <h3><span>CLUB</span>BAC</h3>
+        </a>
+      </div>
+      
+    </nav>
+  </header>
+
+  <section class="dashboard" id="dashboard">
+    <div class="sidebar_container" id="sidebar-container">
+      <ul class="sidebar_list">
+        <li class="sidebar_item" title="Dashboard">
+          <a href="dashboard.html" class="sidebar_link"><i class="bx bxs-dashboard icon_btn"></i> Dashboard</a>
+        </li>
+        <li class="sidebar_item" title="Products">
+          <a href="product.html" class="sidebar_link"><i class='bx bxs-purchase-tag icon_btn'></i> Products</a>
+        </li>
+        <li class="sidebar_item">
+          <a href="video.html" class="sidebar_link"><i class='bx bxs-video-plus icon_btn'></i> Videos</a>
+        </li>
+        <li class="sidebar_item active">
+          <a href="article.html" class="sidebar_link active"><i class='bx bxs-image-add icon_btn'></i> Articles</a>
+        </li>
+        <li class="sidebar_item" title="Orders">
+          <a href="order.html" class="sidebar_link"><i class='bx bxs-shopping-bags icon_btn'></i> Orders</a>
+        </li>
+        <li class="sidebar_item" title="Customers">
+          <a href="board-member.html" class="sidebar_link"><i class='bx bxs-user-account icon_btn'></i> Board Members</a>
+        </li> 
+      </ul>
+      <div class="user">
+        <img src="../user/Images/Abdelhamid-Kada.jpg" alt="user" title="User">
+        <h4>Abdelhamid Kada</h4>
+        <button onclick="logout()"><i class='bx bx-log-in' title="Log out"></i></button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="body_title">
+        <h1>Articles</h1>
+        <div class="icon">
+          <a href="edit-article.html"><i class='bx bxs-edit-alt' ></i></a>
+        </div>
+      </div>
+      <hr>
+
+      <div class="article" id="article-container">
+        
+
+        <!--<div class="article_content">
+          <div class="article_img">
+            <img src="../user/Images/article.webp" alt="article">
+          </div>
+          <div class="article_title">
+            <h4>Title</h4>
+            <p>01/01/2025</p>
+            <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut dolores culpa eveniet laudantium nam similique laborum obcaecati nihil praesentium voluptates! Repellendus sit eum ex numquam, laboriosam quam illum omnis perferendis explicabo aliquid laborum rem quod ullam error ab ipsum. Consequuntur eaque ipsum praesentium aperiam, sequi placeat architecto temporibus nesciunt dicta vitae vel mollitia veritatis deserunt modi qui nulla eligendi ab, provident cum perferendis! Placeat animi quod numquam voluptas dolor officia quaerat tempora iusto reprehenderit a beatae laborum asperiores molestias odit aliquam, reiciendis aliquid rem deserunt quam ipsam voluptate! Accusantium in est quam tempore illum suscipit quae hic, consectetur provident id ipsa, nisi sapiente obcaecati quisquam quia earum numquam alias eos corrupti temporibus iure aliquid soluta. Iste, eligendi? Totam ea facere nulla blanditiis possimus debitis nesciunt voluptatibus, eos voluptatum expedita dolores nobis saepe distinctio consequatur impedit illum ipsam reiciendis quas perspiciatis alias. Exercitationem consectetur, obcaecati distinctio itaque placeat veritatis optio cupiditate labore voluptates, corrupti eum numquam repellat quas atque non. Ipsa architecto veniam molestiae quisquam commodi adipisci non iure expedita sequi rem perferendis quam in impedit assumenda maiores culpa, nobis nemo, sint eius eaque perspiciatis cupiditate voluptas quod. Consequuntur ad temporibus dolorum eveniet cum, iure iusto sint, dolore dignissimos distinctio porro!</p>
+          </div>
+          <button class="delete" onclick="deleteArticle()">Delete</button>
+        </div>-->
+        
+      </div>
+      
+
+    </div>
+  </section>
+
+  <script>
+    // Load articles from localStorage
+    const articles = JSON.parse(localStorage.getItem("articles")) || [];
+    const articlesContainer = document.getElementById("article-container");
+  
+    if (articles.length === 0) {
+      articlesContainer.innerHTML = "<p>No articles found!</p>";
+    } else {
+      // Display each article
+      articles.forEach((article, index) => {
+        const articleDiv = document.createElement("div");
+        articleDiv.classList.add("article");
+        articleDiv.setAttribute("data-index", index); // Add a custom attribute to reference the index
+  
+        articleDiv.innerHTML = `
+          <div class="article_content">
+            <div class="article_img">
+              ${article.imageDataUrl ? `<img src="${article.imageDataUrl}" alt="article" style="max-width: 100%;">` : ''}
+            </div>
+            <div class="article_title">
+              <h4>${article.title || "No title provided"}</h4>
+              <p>${article.description || "No description provided"}</p>
+            </div>
+            <button class="delete" onclick="deleteArticle(${index})">Delete</button>
+          </div>
+        `;
+        articlesContainer.appendChild(articleDiv);
+      });
+    }
+  
+    function deleteArticle(index) {
+      // Remove the article at the specified index from localStorage
+      const articles = JSON.parse(localStorage.getItem("articles")) || [];
+      articles.splice(index, 1);  // Remove the article at the specified index
+  
+      // Save the updated list back to localStorage
+      localStorage.setItem("articles", JSON.stringify(articles));
+  
+      // Find and remove the article's div from the DOM
+      const articleDivs = document.querySelectorAll('.article');
+      articleDivs.forEach(articleDiv => {
+        if (articleDiv.getAttribute("data-index") == index) {
+          articleDiv.remove();  // Remove the article div element from the DOM
+        }
+      });
+    }
+  </script>
+  
+
+
+
+  <script>
+    // Check if the user is logged in
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    // logout
+    function logout() {
+      localStorage.clear();
+      window.location.href = '../login.html';
+    }
+  </script>
+  <script src="./scripts/main-admin.js"></script>
+
+</body>
+</html>
