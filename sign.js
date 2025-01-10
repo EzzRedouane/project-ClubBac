@@ -1,38 +1,3 @@
-/*const users = [{ 
-    username: 'admin',
-    password: '11111111',
-    role: 'admin'
-  },
-  { username: 'user',
-    password: '22222222',
-    role: 'user'
-  }
-];
-
-function login(){
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-
-  const user = users.find(log => log.username === username && log.password === password);
-
-  if(user) {
-    localStorage.setItem('role', user.role);
-    if(user.role === 'admin'){
-      window.location.href = './admin/dashboard.html';
-    }
-    else if(user.role === 'user'){
-      window.location.href = './user/home.html';
-    }
-    else{
-      alert('Invalid credentials. Please try again.');
-    }
-  }
-  else{
-    alert('Invalid email or password');
-  }
-}*/
-
 const form = document.getElementById('loginForm');
 
     form.addEventListener('submit', (event) => {

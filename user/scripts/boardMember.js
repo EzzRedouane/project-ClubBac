@@ -14,16 +14,6 @@ boardMember.forEach((member) => {
 });
 document.querySelector('.js-board-container').innerHTML = boardMemberHTML;
 
-/*document.querySelectorAll('.js-to-profile').forEach((button) => {
-  button.addEventListener('click', () => {
-    const memberName = button.dataset.memberName;
-    boardMember.push({
-      memberName: memberName
-    });
-    console.log(boardMember);
-    
-  })
-})*/
 
 
 

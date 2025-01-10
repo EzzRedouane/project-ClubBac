@@ -98,10 +98,6 @@ header{
 
 
 
-
-
-
-
 /*  Home page  */
 .hero{
   color: white;
@@ -1333,6 +1329,8 @@ canvas{
 
 
 
+
+/*   Responsive in 830px    */
 @media screen and (max-width : 830px){
   /*   Home Page   */
   .navbar_container .navbar_list .navbar_item{
@@ -1537,6 +1535,9 @@ canvas{
 }
 
 
+
+
+/*   Responsive in 720px    */
 @media screen and (max-width : 720px){
   /*   Home Page   */
   
@@ -1838,11 +1839,17 @@ canvas{
   }
 }
 
+
+
+/*   Responsive in 600px    */
 @media screen and (max-width : 600px){
   .about_info img, .about_info_reverse img{
     width: 350px;
   }
 }
+
+
+
 
 /*   Phone screen Responsive   */
 @media screen and (max-width = 420px){
